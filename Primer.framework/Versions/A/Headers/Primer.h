@@ -14,14 +14,40 @@
  * @brief The @c PMRReferralBlock is called by the token registration and attribution.
  *
  * @param success Returns YES if the SDK was initialized with attribution.
+ * @param attributionParams Any parameters associated with attribution.
  * @param clickParams Any parameters associated with the install click.
- * @param campaign The campaign that the user installed from.
+ * @param targeting The targeting that the user installed from.
  * @param source The source that the user installed from.
  * @param phoneNumber The phone number of the current user if known.
  * @param deepLink The deep link the current user would have/has been sent to if they had the app installed.
  * @param senders Array of PMRContact objects who referred the current installing user.
  */
-typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSString *campaign, NSString *source, NSString *phoneNumber, NSString *deepLink, NSArray *senders);
+typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *attributionParams, NSDictionary *clickParams, NSString *targeting, NSString *source, NSString *phoneNumber, NSString *deepLink, NSArray *senders);
+
+/*!
+ * @brief The @c PMRReferrerBlock is called by the token registration. Used with the params dictionary keys.
+ *
+ * @param params Any parameters associated with the install referrer.
+ * @param successful Returns YES if the SDK was initialized with attribution.
+ */
+typedef void(^PMRReferrerBlock)(NSDictionary *params, BOOL successful);
+
+#pragma mark - Referrer Params Dictionary Keys
+
+/// Referrer Params key for the targeting
+extern NSString * const PMR_REFERRER_PARAMS_KEY_TARGETING;
+
+/// Referrer Params key for the source
+extern NSString * const PMR_REFERRER_PARAMS_KEY_SOURCE;
+
+/// Referrer Params key for the current users phone number if available
+extern NSString * const PMR_REFERRER_PARAMS_KEY_PHONE_NUMBER;
+
+/// Referrer Params key for the intended deeplink if available
+extern NSString * const PMR_REFERRER_PARAMS_KEY_DEEPLINK;
+
+/// Referrer Params key for the PMRContact of the sender if available
+extern NSString * const PMR_REFERRER_PARAMS_KEY_SENDER;
 
 /*!
  * @brief The Primer class defines the Primer SDK interface.
@@ -38,8 +64,11 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
  */
 @interface Primer : NSObject
 
+/// @brief The targeting key.
+@property (nonatomic, strong) NSString *targetingKey;
+
 /// @brief The campaign key.
-@property (nonatomic, strong) NSString *campaignKey;
+@property (nonatomic, strong) NSString *campaignKey DEPRECATED_MSG_ATTRIBUTE("Use targetingKey instead.");
 
 /// @brief The deep link path.
 @property (nonatomic, strong) NSString *deepLinkPath;
@@ -94,7 +123,7 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
 /*!
  * @brief Provides access to the Primer singleton.
  */
-+ (Primer *) sharedInstance;
++ (Primer *)sharedInstance;
 
 /*!
  * @brief Activates the Primer framework, registers the client, performs install attribution and shows any screens necessary.
@@ -106,7 +135,19 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
  * @param token The token of your app on Primer.
  * @param referralBlock If this @c PMRReferralBlock is provided, it will be called with any attribution information available for the current user.
  */
-- (void)registerClientWithToken:(NSString *)token andReferralBlock:(PMRReferralBlock)referralBlock;
+- (void)registerClientWithToken:(NSString *)token andReferralBlock:(PMRReferralBlock)referralBlock DEPRECATED_MSG_ATTRIBUTE("Use registerClientWithToken:andReferrerBlock: instead.");
+
+/*!
+ * @brief Activates the Primer framework, registers the client, performs install attribution and shows any screens necessary.
+ *
+ * This method attempts to fetch any attribution information for the current user.
+ * It uses a configurable timeout of three seconds, blocking the main thread until the data is returned.
+ * In the case of a timeout and when no attribution information or updated screen is available, any defaults stored locally or cached will be used.
+ *
+ * @param token The token of your app on Primer.
+ * @param referrerBlock If this @c PMRReferrerBlock is provided, it will be called with any attribution information available for the current user.
+ */
+- (void)registerClientWithToken:(NSString *)token andReferrerBlock:(PMRReferrerBlock)referrerBlock;
 
 /*!
  * @brief Activates the Primer framework, registers the client, performs install attribution and shows any screens necessary.
@@ -119,7 +160,20 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
  * @param newInstall Whether an install is a brand new user to your app.
  * @param referralBlock If this @c PMRReferralBlock is provided, it will be called with any attribution information available for the current user.
  */
-- (void)registerClientWithToken:(NSString *)token isNewInstall:(BOOL)newInstall andReferralBlock:(PMRReferralBlock)referralBlock;
+- (void)registerClientWithToken:(NSString *)token isNewInstall:(BOOL)newInstall andReferralBlock:(PMRReferralBlock)referralBlock DEPRECATED_MSG_ATTRIBUTE("Use registerClientWithToken:isNewInstall:andReferrerBlock instead.");
+
+/*!
+ * @brief Activates the Primer framework, registers the client, performs install attribution and shows any screens necessary.
+ *
+ * This method attempts to fetch any attribution information for the current user.
+ * It uses a configurable timeout of three seconds, blocking the main thread until the data is returned.
+ * In the case of a timeout and when no attribution information or updated screen is available, any defaults stored locally or cached will be used.
+ *
+ * @param token The token of your app on Primer.
+ * @param newInstall Whether an install is a brand new user to your app.
+ * @param referrerBlock If this @c PMRReferrerBlock is provided, it will be called with any attribution information available for the current user.
+ */
+- (void)registerClientWithToken:(NSString *)token isNewInstall:(BOOL)newInstall andReferrerBlock:(PMRReferrerBlock)referrerBlock;
 
 /*!
  * @brief Calling this activates any screen queued for the current user to see on app launch.
@@ -138,14 +192,20 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
 - (void)track:(NSString *)event;
 
 /*!
+ * @brief Sends a custom tracking event with optional parameters.
+ *
+ * @param event The name of the event tracked to analytics.
+ * @param param Dictionary of @c NSString : @c NSString key/values describing the event.
+ */
+- (void)track:(NSString *)event parameters:(NSDictionary *)param DEPRECATED_MSG_ATTRIBUTE("Use track:properties: instead.");
+
+/*!
  * @brief Sends a custom tracking event with optional properties.
  *
  * @param event The name of the event tracked to analytics.
  * @param prop Dictionary of @c NSString : @c NSString key/values describing the event.
  */
 - (void)track:(NSString *)event properties:(NSDictionary *)prop;
-
-- (void)track:(NSString *)event parameters:(NSDictionary *)param  __attribute__((deprecated("Use track:properties:")));
 
 /*!
  * @brief Logs in the current user with a unique user ID.
@@ -205,7 +265,18 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
  * @param additionalParams Optional dictionary of @c NSString : @c NSString values to be included with the invite.
  * @param blacklist Optional array of @c NSString phonenumbers to hide from the contacts list.
  */
-- (void)presentInviterExperienceOn:(UIViewController *)viewController referralCode:(NSString *)referralCode campaignKey:(NSString *)campaignKey deepLinkPath:(NSString *)deepLinkPath additionalParams:(NSDictionary *)additionalParams blacklist:(NSArray *)blacklist;
+- (void)presentInviterExperienceOn:(UIViewController *)viewController referralCode:(NSString *)referralCode campaignKey:(NSString *)campaignKey deepLinkPath:(NSString *)deepLinkPath additionalParams:(NSDictionary *)additionalParams blacklist:(NSArray *)blacklist DEPRECATED_MSG_ATTRIBUTE("Use presentInviterExperienceOn with the targetingKey parameter instead.");
+
+/*!
+ * @brief Starts the invite flow with built in ViewController.
+ *
+ * @param viewController The view controller that the ViewControllers will be presented on.
+ * @param targetingKey Targeting to send invites from.
+ * @param deepLinkPath Optional deep link path for directing the receiver.
+ * @param additionalParams Optional dictionary of @c NSString : @c NSString values to be included with the invite.
+ * @param blacklist Optional array of @c NSString phonenumbers to hide from the contacts list.
+ */
+- (void)presentInviterExperienceOn:(UIViewController *)viewController referralCode:(NSString *)referralCode targetingKey:(NSString *)targetingKey deepLinkPath:(NSString *)deepLinkPath additionalParams:(NSDictionary *)additionalParams blacklist:(NSArray *)blacklist;
 
 /*!
  * @brief Sends invites to a list of contacts.
@@ -219,7 +290,21 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
  * @param deepLinkPath Optional deep link path for directing the receiver
  * @param additionalParams Optional dictionary of NSString : NSString values to be included with the invite
  */
-- (void)sendInvitesOn:(UIViewController *)viewController phoneNumbers:(NSArray *)phoneNumbers referralCode:(NSString *)referralCode campaignKey:(NSString *)campaignKey deepLinkPath:(NSString *)deepLinkPath additionalParams:(NSDictionary *)additionalParams;
+- (void)sendInvitesOn:(UIViewController *)viewController phoneNumbers:(NSArray *)phoneNumbers referralCode:(NSString *)referralCode campaignKey:(NSString *)campaignKey deepLinkPath:(NSString *)deepLinkPath additionalParams:(NSDictionary *)additionalParams DEPRECATED_MSG_ATTRIBUTE("Use sendInvitesOn with the targetingKey parameter instead.");
+
+/*!
+ * @brief Sends invites to a list of contacts.
+ *
+ * Will show Message Controller if there are local invites to send.
+ *
+ * @param viewController The view controller that the SMS MessageController will be presented on
+ * @param phoneNumbers An array of PMRContact objects that contain the name and phone number of each contact
+ * @param referralCode Optional referral code to associate with invites
+ * @param targetingKey Targeting to send invites from
+ * @param deepLinkPath Optional deep link path for directing the receiver
+ * @param additionalParams Optional dictionary of NSString : NSString values to be included with the invite
+ */
+- (void)sendInvitesOn:(UIViewController *)viewController phoneNumbers:(NSArray *)phoneNumbers referralCode:(NSString *)referralCode targetingKey:(NSString *)targetingKey deepLinkPath:(NSString *)deepLinkPath additionalParams:(NSDictionary *)additionalParams;
 
 /*!
  * @brief Returns invite copy for a specific campaign.
@@ -230,10 +315,21 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
  * @param additionalParams Optional dictionary of @c NSString : @c NSString values to be included with the invite.
  * @param completionBlock Block that's called with the copy returned from the server.
  */
-- (void)getInviteCopyForReferralCode:(NSString *)referralCode campaignKey:(NSString *)campaignKey deepLinkPath:(NSString *)deepLinkPath additionalParams:(NSDictionary *)additionalParams completionBlock:(void(^)(NSString *copy))completionBlock;
+- (void)getInviteCopyForReferralCode:(NSString *)referralCode campaignKey:(NSString *)campaignKey deepLinkPath:(NSString *)deepLinkPath additionalParams:(NSDictionary *)additionalParams completionBlock:(void(^)(NSString *copy))completionBlock DEPRECATED_MSG_ATTRIBUTE("Use getInviteCopyForReferralCode with the targetingKey parameter instead.");
 
 /*!
- * @brief Returns a smart link for a specific campaign
+ * @brief Returns invite copy for a specific targeting.
+ *
+ * @param referralCode Optional referral code.
+ * @param targetingKey Targeting to send invites from.
+ * @param deepLinkPath Optional path for this targeting's configured deep link.
+ * @param additionalParams Optional dictionary of @c NSString : @c NSString values to be included with the invite.
+ * @param completionBlock Block that's called with the copy returned from the server.
+ */
+- (void)getInviteCopyForReferralCode:(NSString *)referralCode targetingKey:(NSString *)targetingKey deepLinkPath:(NSString *)deepLinkPath additionalParams:(NSDictionary *)additionalParams completionBlock:(void(^)(NSString *copy))completionBlock;
+
+/*!
+ * @brief Returns a smart link for a specific campaign.
  *
  * @param referralCode Optional referral code.
  * @param campaignKey Campaign to get smart link from.
@@ -241,7 +337,16 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
  * @param additionalParams Optional dictionary of @c NSString : @c NSString values to be included with the invite.
  * @param completionBlock Block that's called with the smart link returned from the server.
  */
-- (void)getTrackingLinkForReferralCode:(NSString *)referralCode campaignKey:(NSString *)campaignKey deepLinkPath:(NSString *)deepLinkPath additionalParams:(NSDictionary *)additionalParams completionBlock:(void(^)(NSString *link))completionBlock;
+- (void)getTrackingLinkForReferralCode:(NSString *)referralCode campaignKey:(NSString *)campaignKey deepLinkPath:(NSString *)deepLinkPath additionalParams:(NSDictionary *)additionalParams completionBlock:(void(^)(NSString *link))completionBlock DEPRECATED_MSG_ATTRIBUTE("Use getTrackingLinkForTargetingKey instead.");
+
+/*!
+ * @brief Returns a smart link for a specific targeting.
+ *
+ * @param targetingKey Targeting to get smart link from.
+ * @param params Optional dictionary of @c NSString : @c NSString values to be included with the invite.
+ * @param completionBlock Block that's called with the smart link returned from the server.
+ */
+- (void)getTrackingLinkForTargetingKey:(NSString *)targetingKey withParameters:(NSDictionary *)parameters andCompletionBlock:(void(^)(NSString *link))completionBlock;
 
 /*!
  * @brief Sends an event to complete the referral cycle.
@@ -294,7 +399,7 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
  *
  * @return @c YES if the experience flow is succesfully started, @c NO otherwise.
  */
-- (BOOL)startExperienceFlow:(NSString *)experienceKey __attribute__((deprecated("Use showExperience:")));
+- (BOOL)startExperienceFlow:(NSString *)experienceKey DEPRECATED_MSG_ATTRIBUTE("Use showExperience: instead.");
 
 /*!
  * @brief Checks if an experience flow with the given key is available.
@@ -303,21 +408,21 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
  *
  * @return @c YES if an experience flow exists with the given key, @c NO otherwise.
  */
-- (BOOL)hasExperienceFlow:(NSString *)experienceKey __attribute__((deprecated("Use hasExperience:")));
+- (BOOL)hasExperienceFlow:(NSString *)experienceKey DEPRECATED_MSG_ATTRIBUTE("Use hasExperience: instead.");
 
 /*!
  * @brief Checks if a flow is currently showing.
  *
  * @return @c YES if the experience flow is currently showing, @c NO otherwise.
  */
-- (BOOL)isShowingExperienceFlow __attribute__((deprecated("Use isShowingExperience")));
+- (BOOL)isShowingExperienceFlow DEPRECATED_MSG_ATTRIBUTE("Use isShowingExperience instead.");
 
 /*!
  * @brief If currently in a flow, jump to the next screen in the flow.
  *
  * @note If any unique variables are on the current flow experience screen, validation will occur first.
  */
-- (void)nextFlowScreen __attribute__((deprecated("Use nextExperienceScreen")));
+- (void)nextFlowScreen DEPRECATED_MSG_ATTRIBUTE("Use nextExperienceScreen instead.");
 
 /*!
  * @brief If currently in a flow, jump to the next screen in the flow.
@@ -386,7 +491,12 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
 /*!
  * @brief Gets the campaign attributed with the current user installing the app.
  */
-- (NSString *)getInstallCampaign;
+- (NSString *)getInstallCampaign DEPRECATED_MSG_ATTRIBUTE("Use getInstallTargeting instead.");
+
+/*!
+ * @brief Gets the targeting attributed with the current user installing the app.
+ */
+- (NSString *)getInstallTargeting;
 
 /*!
  * @brief Gets the source attributed with the current user installing the app.
@@ -399,6 +509,11 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
 - (NSDictionary *)getInstallClickParams;
 
 /*!
+ * @brief Gets any attribution parameters attributed with the current user.
+ */
+- (NSDictionary *)getInstallAttributionParams;
+
+/*!
  * @brief Gets the referrer attributed with the current user opening the app.
  */
 - (PMRContact *)returningReferrer;
@@ -406,7 +521,12 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
 /*!
  * @brief Gets the campaign attributed with the current user opening the app.
  */
-- (NSString *)getReturningCampaign;
+- (NSString *)getReturningCampaign DEPRECATED_MSG_ATTRIBUTE("Use getReturningTargeting instead.");
+
+/*!
+ * @brief Gets the targeting attributed with the current user opening the app.
+ */
+- (NSString *)getReturningTargeting;
 
 /*!
  * @brief Gets the source attributed with the current user opening the app.
@@ -417,6 +537,11 @@ typedef void(^PMRReferralBlock)(BOOL success, NSDictionary *clickParams, NSStrin
  * @brief Gets any link parameters from the click attributed with the current user opening the app.
  */
 - (NSDictionary *)getReturningClickParams;
+
+/*!
+ * @brief Gets any attribution parameters attributed with the current user.
+ */
+- (NSDictionary *)getReturningAttributionParams;
 
 /*!
  * @brief Returns the SDK version.
