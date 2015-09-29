@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, PMRSendType)
 /*!
  * @brief Contains relevant information about a contact or referral.
  */
-@interface PMRContact : NSObject
+@interface PMRContact : NSObject<NSCoding>
 
 /// The name of the contact.
 @property (nonatomic, copy) NSString *contactName;
