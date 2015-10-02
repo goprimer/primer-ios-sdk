@@ -7,6 +7,7 @@
 
 #import "PrimerDelegate.h"
 #import "PMRContact.h"
+#import "PMREvents.h"
 #import "PMROnboardDelegate.h"
 #import "PMRValidityResult.h"
 
@@ -26,7 +27,7 @@ extern NSString * const PMR_REFERRER_PARAMS_KEY_TARGETING;
 /// Referrer Params key for the source
 extern NSString * const PMR_REFERRER_PARAMS_KEY_SOURCE;
 
-/// Referrer Params key for the current users phone number if available
+/// Referrer Params key for the current users phone number if available. Not currently used.
 extern NSString * const PMR_REFERRER_PARAMS_KEY_PHONE_NUMBER;
 
 /// Referrer Params key for the intended deeplink if available
@@ -313,6 +314,13 @@ extern NSString * const PMR_REFERRER_PARAMS_KEY_SENDER;
  * @return An array of the active A/B/N tests.
  */
 - (NSArray *)getActiveABNTests;
+
+/*!
+ * @brief Gets name of the last viewed flow variation.
+ *
+ * @return The variation name.
+ */
+- (NSString *)getFlowVariationName;
 
 /*!
  * @brief Whether it is a referral.
