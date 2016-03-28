@@ -36,7 +36,7 @@ typedef void(^PMRValidationBlock)(PMRValidationResult * _Nullable result);
 @optional
 
 /**
- Called when a screen submit unique fields.
+ Called when a screen submits unique fields.
  
  @note You should validate the fields and call the completion block as soon as possible.
  

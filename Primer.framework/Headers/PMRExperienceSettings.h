@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, PMRExperienceType)
     PMRExperienceTypeRecoverPassword,
     
     /// The signup experience.
-    PMRExperienceTypeSignUp
+    PMRExperienceTypeSignup
 };
 
 NS_ASSUME_NONNULL_BEGIN

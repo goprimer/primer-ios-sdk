@@ -14,11 +14,11 @@
 		</data>
 		<key>Headers/PMRExperienceDelegate.h</key>
 		<data>
-		iOeu2SB4kopBYRkCvG8CQ8GwZ9U=
+		nZWQqDJMQY46o2LaXqNwJu/Q68E=
 		</data>
 		<key>Headers/PMRExperienceSettings.h</key>
 		<data>
-		01Ue+4b5GUyA0toHZ711Z3XOBNA=
+		H7JYbk4VQIfkxBUdewdR5asCRXQ=
 		</data>
 		<key>Headers/PMRLoggingLevel.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Nl5b679viuzsAwZQ9TUmmo6yKaw=
+		UQmAVl2AtI/ajbMrz9re9DKODEE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -52,45 +52,115 @@
 	<key>files2</key>
 	<dict>
 		<key>Headers/PMRAttribution.h</key>
-		<data>
-		WEtWPDVS7d+XE1ZrupDlwNwM28U=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			WEtWPDVS7d+XE1ZrupDlwNwM28U=
+			</data>
+			<key>hash2</key>
+			<data>
+			/2oZ7R1MFMxbkkXpipBaUT3NOJoeDmikxTq2Z061qKM=
+			</data>
+		</dict>
 		<key>Headers/PMREvents.h</key>
-		<data>
-		iSjYvhS+Ie+eDWJpDq0EGN2cpeQ=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			iSjYvhS+Ie+eDWJpDq0EGN2cpeQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			aBBo0fOrOJusPt0gDAAICDOtv4iy4vG6dquiAAHExnc=
+			</data>
+		</dict>
 		<key>Headers/PMRExperienceDelegate.h</key>
-		<data>
-		iOeu2SB4kopBYRkCvG8CQ8GwZ9U=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			nZWQqDJMQY46o2LaXqNwJu/Q68E=
+			</data>
+			<key>hash2</key>
+			<data>
+			eic/47qNFFnbyqytuIrpuYg3cJcc00fRYM3swRNTLRw=
+			</data>
+		</dict>
 		<key>Headers/PMRExperienceSettings.h</key>
-		<data>
-		01Ue+4b5GUyA0toHZ711Z3XOBNA=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			H7JYbk4VQIfkxBUdewdR5asCRXQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			vEWh07iIoQUrGN5wFTJ7K9pUyZP/tT1W86udE4p2zb0=
+			</data>
+		</dict>
 		<key>Headers/PMRLoggingLevel.h</key>
-		<data>
-		qN+iNefswfBU1PksT6DBtj0Y6Zc=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			qN+iNefswfBU1PksT6DBtj0Y6Zc=
+			</data>
+			<key>hash2</key>
+			<data>
+			xeN0DYmi2CIaCoXTL2DSxns/t/4Mg9Hf0gOnsVJKmQ8=
+			</data>
+		</dict>
 		<key>Headers/PMRUser.h</key>
-		<data>
-		3JYH48fHKnO6tht0bZSinQLXRLk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			3JYH48fHKnO6tht0bZSinQLXRLk=
+			</data>
+			<key>hash2</key>
+			<data>
+			nWTG4zkBmIYts3N5RnpQvITd51zV3NsNHFjUcYe+Z9E=
+			</data>
+		</dict>
 		<key>Headers/PMRUserABNTest.h</key>
-		<data>
-		SJLzXrIJ6LJO7aW3U8LRTHqRQZk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			SJLzXrIJ6LJO7aW3U8LRTHqRQZk=
+			</data>
+			<key>hash2</key>
+			<data>
+			PRcFGSBj9y3tFeJdhSLCru8AqdLQA8XGGnRxEmu1G18=
+			</data>
+		</dict>
 		<key>Headers/PMRValidationResult.h</key>
-		<data>
-		95EqL57oO/go37Qpj2E+8u9hk7Q=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			95EqL57oO/go37Qpj2E+8u9hk7Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			4W7LXn1I8seueXuK5cPAogxVaHaeWTEYt+5RBJiiEng=
+			</data>
+		</dict>
 		<key>Headers/Primer.h</key>
-		<data>
-		ObxQJjvEohN3vZHEITgCrESopSI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			ObxQJjvEohN3vZHEITgCrESopSI=
+			</data>
+			<key>hash2</key>
+			<data>
+			awBYC+8nBnIrRQ5FsPaUCJeIPtoQA+M3A64wEMPn8wI=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		QRVH8gdRLePx5hHECAOh/ZKT+Tg=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			QRVH8gdRLePx5hHECAOh/ZKT+Tg=
+			</data>
+			<key>hash2</key>
+			<data>
+			3po0P/36hXDB5yt5Y5HwpdUClkAE4g8wzWiRFFiUHXw=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
