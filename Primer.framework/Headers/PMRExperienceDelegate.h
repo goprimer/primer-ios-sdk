@@ -9,6 +9,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
+ @typedef PMRUserValidationBlock
+ 
  The block that should be called when validation is done and a user can be logged in as a result.
  
  @param result The result of the validation.
@@ -18,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void(^PMRUserValidationBlock)(PMRValidationResult * _Nullable result, NSString * _Nullable userID);
 
 /**
+ @typedef PMRValidationBlock
+ 
  The block that should be called when validation is done.
  
  @param result The result of the validation.
