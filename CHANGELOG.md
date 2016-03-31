@@ -1,5 +1,15 @@
 # Change Log
 
+## [3.0.0 Beta 5](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.0.0-beta.5) (03/31/2016)
+
+##### New Features
+
+* Added support for navigation to the next screen.
+
+##### Bug Fixes
+
+* Fixed a bug with dynamic variable replacement.
+
 ## [3.0.0 Beta 4](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.0.0-beta.4) (03/28/2016)
 
 ##### Enhancements
@@ -10,7 +20,7 @@
 * Improved deep link handling.
 * Improved dynamic variable replacement.
 
-##### Bug fixes
+##### Bug Fixes
 
 * Fixed Bitcode exporting with Xcode 7.3.
 * Fixed occasional keyboard flashing glitch.
