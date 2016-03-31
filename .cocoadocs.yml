@@ -1,14 +1,7 @@
-highlight-font: "Open Sans", "Helvetica Neue", "Arial", san-serif
-
-body: "Open Sans", "Helvetica Neue", "Arial", san-serif
-code: "Monaco", "Menlo", "Consolas", "Courier New", monospace
-
 highlight-color: "#37A8B0"
 highlight-dark-color: "#1F5E62"
-
 darker-color: "#B1C0CC"
 darker-dark-color: "#2D3134"
-
 background-color: "#FFFFFF"
 alt-link-color: "#37A8B0"
 warning-color: "#B24800"
