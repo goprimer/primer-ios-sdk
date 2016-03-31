@@ -125,6 +125,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)loadExperienceType:(PMRExperienceType)type withCompletion:(void (^)(UIViewController * _Nullable viewController))completion;
 
+/**
+ Displays the screen after the current one if there's an experience presented.
+ 
+ @note Validates the current screen before going forward.
+ */
++ (void)goToNextExperienceScreen;
+
 #pragma mark - User Management
 
 /**
