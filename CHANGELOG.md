@@ -1,5 +1,17 @@
 # Change Log
 
+## [3.0.0 Beta 6](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.0.0-beta.6) (04/05/2016)
+
+##### Enhancements
+
+* Improved server response value parsing.
+* Improved header documentation.
+* Improved notification handling.
+
+##### Removals
+
+* Deleted the `shouldUseIDFA` getter from the public interface.
+
 ## [3.0.0 Beta 5](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.0.0-beta.5) (03/31/2016)
 
 ##### New Features
