@@ -19,7 +19,7 @@ FOUNDATION_EXPORT const unsigned char PrimerVersionString[];
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- `Primer` is the main public interface of the SDK, surfacing core functionality.
+ `Primer` is the primary interface of the SDK, providing access to all major features, and importing all public headers.
  */
 @interface Primer : NSObject
 
@@ -52,9 +52,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Sets the experiences' delegate.
  
- @note The Primer SDK holds a weak reference to the delegate.
+ @note The SDK holds a weak reference to the delegate.
  
- @param delegate The delegate for experiences.
+ @param delegate The delegate for presented experiences.
  */
 + (void)setExperienceDelegate:(id <PMRExperienceDelegate>)delegate;
 
@@ -66,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Presents an experience with the given settings.
  
- @param settings The experience settings.
+ @param settings The settings to use for the presentation.
  */
 + (void)presentExperienceWithSettings:(PMRExperienceSettings *)settings;
 
@@ -80,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Presents an experience with the given settings.
  
- @param settings The experience settings.
+ @param settings The settings to use for the presentation.
  
  @param completion The callback that gets called when the presentation is done.
  */
@@ -94,16 +94,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)isPresentingExperience;
 
 /**
- Dismisses the currently presenting experience if there's one.
- 
- @note Has no effect if you loaded an experience with one of the `loadExperience...` methods and presented it yourself.
+ Dismisses the currently presented experience if there's one.
  */
 + (void)dismissExperience;
 
 /**
- Dismisses the currently presenting experience if there's one.
- 
- @note Has no effect if you loaded an experience with one of the `loadExperience...` methods and presented it yourself.
+ Dismisses the currently presented experience if there's one.
  
  @param completion The callback that gets called when the dismissal is done.
  */
@@ -112,7 +108,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Loads the automatic experience and returns it's view controller in a completion block.
  
- @param completion The callback that gets called when the experience is loaded.
+ @param completion The callback that gets called when loading is done.
  */
 + (void)loadExperienceWithCompletion:(void (^)(UIViewController * _Nullable viewController))completion;
 
@@ -121,7 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param type The type of the experience.
  
- @param completion The callback that gets called when the experience is loaded.
+ @param completion The callback that gets called when loading is done.
  */
 + (void)loadExperienceType:(PMRExperienceType)type withCompletion:(void (^)(UIViewController * _Nullable viewController))completion;
 
@@ -151,7 +147,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Signs up the current user.
  
- @see signUpUserWithID
+ @see +signUpUserWithID:
  */
 + (void)signUpUser;
 
@@ -160,14 +156,14 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param userID Unique identifier of the current user.
  
- @see signUpUser
+ @see +signUpUser
  */
 + (void)signUpUserWithID:(NSString *)userID;
 
 /**
  Logs in the current user.
  
- @see logInUserWithID
+ @see +logInUserWithID:
  */
 + (void)logInUser;
 
@@ -176,7 +172,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param userID Unique identifier of the current user.
  
- @see logInUser
+ @see +logInUser
  */
 + (void)logInUserWithID:(NSString *)userID;
 
@@ -192,7 +188,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param userProperties A dictionary of values to be permanently attached to the user.
  */
-+ (void)appendUserProperties:(NSDictionary<NSString *,id> *)userProperties;
++ (void)appendUserProperties:(NSDictionary<NSString *, id> *)userProperties;
 
 #pragma mark - Event Tracking
 
@@ -223,7 +219,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param parameters The parameters to be attached to the link.
  
- @param completion The block that gets called with the retrieved link, or with `nil` if one cannot be retrieved.
+ @param completion The block that gets called with the link, or with `nil` if one cannot be retrieved.
  */
 + (void)getLinkForTargeting:(NSString *)targeting withParameters:(nullable NSDictionary<NSString *, id> *)parameters completion:(void(^)(NSString * _Nullable link))completion;
 
@@ -242,16 +238,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)getLatestAttributionWithCompletion:(void(^)(PMRAttribution *attribution))completion;
 
 /**
- Whether the SDK should use the IDFA provided by the AdSupport framework.
- 
- @note Default value is `YES`.
- */
-+ (BOOL)shouldUseIDFA;
-
-/**
  Sets whether the SDK should use the IDFA provided by the AdSupport framework.
  
  @note Default value is `YES`.
+ 
+ @param shouldUseIDFA The value to set.
  */
 + (void)setShouldUseIDFA:(BOOL)shouldUseIDFA;
 
@@ -269,7 +260,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Version
 
 /**
- The SDK version.
+ The version of the SDK.
  */
 + (NSString *)version;
 

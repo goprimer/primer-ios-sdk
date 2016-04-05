@@ -5,7 +5,10 @@
 #import <UIKit/UIkit.h>
 
 /**
- Experience types available when presenting an experience.
+ The experience types available when presenting an experience.
+ 
+ The automatic type behaves like the automatic presentation method, as in the SDK determines if an experience needs to be presented at all, using the user state information.
+ The other options will show the appropriate experience, regardless of the user's logged-in status.
  */
 typedef NS_ENUM(NSInteger, PMRExperienceType)
 {
@@ -31,11 +34,11 @@ typedef NS_ENUM(NSInteger, PMRExperienceType)
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- `PMRExperienceSettings` is responsible for holding all settings of an experience.
+ `PMRExperienceSettings` is responsible for holding all tweakable parameters of an experience presentation.
  */
 @interface PMRExperienceSettings : NSObject
 
-/// The type of the experience. @see PMRExperienceType
+/// The type of the experience. See `PMRExperienceType` for possible values.
 @property (nonatomic, assign) PMRExperienceType experienceType;
 
 /// Whether the presentation of the experience should be animated.

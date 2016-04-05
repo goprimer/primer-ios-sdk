@@ -14,13 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// Whether it is a referral.
 @property (nonatomic, assign, readonly, getter=isReferral) BOOL referral;
 
-/// The Deep Link.
+/// The deep link.
 @property (nonatomic, strong, readonly, nullable) NSString *deepLink;
 
-/// The name of the link.
+/// The name of the static link.
 @property (nonatomic, strong, readonly, nullable) NSString *linkName;
 
-/// The attribution parameters
+/// The parameters attached to the attribution.
 @property (nonatomic, strong, readonly) NSDictionary<NSString *, id> *parameters;
 
 /// The user properties of the sender.

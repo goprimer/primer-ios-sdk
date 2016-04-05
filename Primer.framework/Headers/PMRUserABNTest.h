@@ -17,12 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// The variation of the test.
 @property (nonatomic, strong, readonly, nullable) NSString *variation;
 
-#pragma mark - Initialization
-
-- (instancetype)init NS_UNAVAILABLE;
-
-+ (instancetype)new NS_UNAVAILABLE;
-
 @end
 
 NS_ASSUME_NONNULL_END

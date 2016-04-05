@@ -13,19 +13,19 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface PMRUser : NSObject
 
-/// Unique identifier of the user.
+/// The unique identifier of the user.
 @property (nonatomic, strong, nullable, readonly) NSString *userID;
 
-/// Name of the user.
+/// The name of the user.
 @property (nonatomic, strong, nullable) NSString *name;
 
-/// Properties of the user.
+/// The properties attached to the user.
 @property (nonatomic, strong, readonly) NSDictionary<NSString *, id> *properties;
 
-/// Active A/B/N tests of the user.
+/// The active A/B/N tests the user participates in.
 @property (nonatomic, strong, readonly) NSArray<PMRUserABNTest *> *activeABNTests;
 
-/// Last viewed variation of the user.
+/// Th last viewed variation of the user.
 @property (nonatomic, strong, nullable, readonly) NSString *lastViewedVariation;
 
 @end

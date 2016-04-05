@@ -8,6 +8,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  `PMRValidationResult` is responsible for holding information about the result of a validation.
+ 
+ A new instance is considered to be valid until you call one of the invalidation methods.
  */
 @interface PMRValidationResult : NSObject
 
@@ -23,14 +25,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)invalidateWithErrorMessage:(NSString *)errorMessage;
 
 /**
- Invalidates a given field.
+ Invalidates the given field.
  
  @param field The key of the invalid field.
  */
 - (void)invalidateField:(NSString *)field;
 
 /**
- Invalidates a given field with an error message attached.
+ Invalidates the given field with an error message attached.
  
  @param field The key of the invalid field.
  

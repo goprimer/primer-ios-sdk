@@ -29,71 +29,83 @@ typedef void(^PMRUserValidationBlock)(PMRValidationResult * _Nullable result, NS
 typedef void(^PMRValidationBlock)(PMRValidationResult * _Nullable result);
 
 /**
- `PMRExperienceDelegate` is responsible for handling messages from an experience.
+ The delegate conforming to the `PMRExperienceDelegate` protocol is responsible for handling messages from the currently presented experience.
+ 
+ It will be notified about the progress of your users, and receive the information they provide as an input
  */
 @protocol PMRExperienceDelegate <NSObject>
 
 @optional
 
 /**
- Called when a screen submits unique fields.
+ Called after a screen is submitted with any unique fields on it.
  
- @note You should validate the fields and call the completion block as soon as possible.
+ You should validate the uniqueness of the fields and call the completion block as soon as possible.
  
- @param fields The `key : value` pair of fields that were put in by the user.
+ @attention Always call the `completion` block, even if in an asynchronous manner. Until you do so, the SDK displays a loading overlay to the user.
+ 
+ @param fields The `key : value` pair of the submitted screen's unique fields.
  
  @param completion The block to call when you finished validation.
  */
 - (void)validateUniqueFields:(NSDictionary<NSString *, id> *)fields completion:(PMRValidationBlock)completion;
 
 /**
- Called before the login flow completes.
+ Called after the login flow is submitted.
  
- @note You should validate the fields and call the completion block as soon as possible.
+ You should validate the fields and call the completion block as soon as possible.
  
- @param fields The `key : value` pair of fields that were put in by the user.
+ @attention Always call the `completion` block, even if in an asynchronous manner. Until you do so, the SDK displays a loading overlay to the user.
+ 
+ @param fields The `key : value` pair of the login flow's fields.
  
  @param completion The block to call when you finished validation.
  */
 - (void)logInWithFields:(NSDictionary<NSString *, id> *)fields completion:(PMRUserValidationBlock)completion;
 
 /**
- Called before the signup flow completes.
+ Called after the signup flow is submitted.
  
- @note You should validate the fields and call the completion block as soon as possible.
+ You should validate the fields and call the completion block as soon as possible.
  
- @param fields The `key : value` pair of fields that were put in by the user.
+ @attention Always call the `completion` block, even if in an asynchronous manner. Until you do so, the SDK displays a loading overlay to the user.
+ 
+ @param fields The `key : value` pair of the signup flow's fields.
  
  @param completion The block to call when you finished validation.
  */
 - (void)signUpWithFields:(NSDictionary<NSString *, id> *)fields completion:(PMRUserValidationBlock)completion;
 
 /**
- Called right after the Facebook authentication took place.
+ Called after a Facebook authentication takes place.
  
- @note You should validate the fields and call the completion block as soon as possible.
+ You should validate the fields and call the completion block as soon as possible.
  
- @param fields The `key : value` pair of fields that were received from Facebook
+ @attention Always call the `completion` block, even if in an asynchronous manner. Until you do so, the SDK displays a loading overlay to the user.
+ 
+ @param fields The `key : value` pair of fields that were received from Facebook.
  
  @param completion The block to call when you finished validation.
  */
 - (void)authenticateFacebookWithFields:(NSDictionary<NSString *, id> *)fields completion:(PMRUserValidationBlock)completion;
 
 /**
- Called before the password recovery flow completes.
+ Called after the password recovery flow is submitted.
  
- @note You should validate the fields and call the completion block as soon as possible.
+ You should validate the fields and call the completion block as soon as possible.
  
- @param fields The `key : value` pair of fields that were put in by the user.
+ @attention Always call the `completion` block, even if in an asynchronous manner. Until you do so, the SDK displays a loading overlay to the user.
+ 
+ @param fields The `key : value` pair of the password recovery flow's fields.
  
  @param completion The block to call when you finished validation.
  */
 - (void)recoverPasswordWithFields:(NSDictionary<NSString *, id> *)fields completion:(PMRValidationBlock)completion;
 
 /**
- Tells the delegate that the experience will be closed.
+ Called before the experience will be closed.
  
- @param fields The `key : value` pair of fields that were put in by the user.
+ @param fields The `key : value` pair of fields that were put in by the user up until this point in the flow.
  */
 - (void)willCloseWithFields:(NSDictionary<NSString *, id> *)fields;
 
