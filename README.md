@@ -1,6 +1,6 @@
 # Primer iOS SDK
 
-[![CocoaPods Compatible](https://img.shields.io/badge/CocoaPods-3.0.0--beta.6-5BA7E9.svg?style=flat)](https://cocoapods.org)
+[![CocoaPods Compatible](https://img.shields.io/badge/CocoaPods-3.0.0-5BA7E9.svg?style=flat)](https://cocoapods.org)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-Compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/badge/Platform-iOS-lightgrey.svg?style=flat)]()
 
@@ -23,7 +23,7 @@ The Primer iOS SDK requires a free account to be created at https://goprimer.com
 To integrate using CocoaPods, add the necessary sources and the Primer pod to your `Podfile`:
 
 ```ruby
-pod 'Primer', '3.0.0-beta.6'
+pod 'Primer', '~> 3.0'
 ```
 
 *Note: since these are pre-releases you have to explicitly specify the version.*
@@ -33,7 +33,7 @@ pod 'Primer', '3.0.0-beta.6'
 To integrate using Carthage, add the following to your `Cartfile`:
 
 ```ruby
-github "goprimer/primer-ios-sdk" "3.0.0-beta.6"
+github "goprimer/primer-ios-sdk" ~> 3.0
 ```
 
 And add the path to the framework under "Input Files" for the `copy-frameworks` script Build Phase:
