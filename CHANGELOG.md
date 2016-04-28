@@ -1,5 +1,9 @@
 # Change Log
 
+## [3.0.0](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.0.0) (04/13/2016)
+
+We re-architectured and rewrote our whole SDK to make it even better, more stable, and future proof. While doing so we cleaned up the public interface in a major way. Please take a look at our [Upgrade Guide](http://docs.goprimer.com/v3.0.0/docs/upgrade-guide) for more information on what changed and how to update your integration.
+
 ## [3.0.0 Beta 6](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.0.0-beta.6) (04/05/2016)
 
 ##### Enhancements
