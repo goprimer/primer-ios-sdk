@@ -4,14 +4,14 @@
 
 #import <UIKit/UIKit.h>
 
-#import <Primer/PMRAttribution.h>
-#import <Primer/PMREvents.h>
-#import <Primer/PMRExperienceDelegate.h>
-#import <Primer/PMRExperienceSettings.h>
-#import <Primer/PMRLoggingLevel.h>
-#import <Primer/PMRUser.h>
-#import <Primer/PMRUserABNTest.h>
-#import <Primer/PMRValidationResult.h>
+#import "PMRAttribution.h"
+#import "PMREvents.h"
+#import "PMRExperienceDelegate.h"
+#import "PMRExperienceSettings.h"
+#import "PMRLoggingLevel.h"
+#import "PMRUser.h"
+#import "PMRUserABNTest.h"
+#import "PMRValidationResult.h"
 
 FOUNDATION_EXPORT double PrimerVersionNumber;
 FOUNDATION_EXPORT const unsigned char PrimerVersionString[];
@@ -106,14 +106,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)dismissExperienceWithCompletion:(void (^)(BOOL success))completion;
 
 /**
- Loads the automatic experience and returns it's view controller in a completion block.
+ Loads the automatic experience and returns its view controller in a completion block.
  
  @param completion The callback that gets called when loading is done.
  */
 + (void)loadExperienceWithCompletion:(void (^)(UIViewController * _Nullable viewController))completion;
 
 /**
- Loads a given type of experience and returns it's view controller in a completion block.
+ Loads a given type of experience and returns its view controller in a completion block.
  
  @param type The type of the experience.
  

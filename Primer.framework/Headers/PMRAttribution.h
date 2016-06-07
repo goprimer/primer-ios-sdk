@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  `PMRAttribution` is responsible for holding all information about an attribution.
  */
-@interface PMRAttribution : NSObject
+@interface PMRAttribution : NSObject <NSCopying>
 
 /// Whether it is a referral.
 @property (nonatomic, assign, readonly, getter=isReferral) BOOL referral;
@@ -34,6 +34,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// The name of the targeting.
 @property (nonatomic, strong, readonly, nullable) NSString *targetingName;
+
+#pragma mark - Equality
+
+/**
+ Returns a Boolean value that indicates whether a given attribution is equal to the receiver.
+ 
+ @param attribution The attribution with which to compare the receiver.
+ 
+ @return `YES` if the attribution is equivalent to the receiver, `NO` otherwise.
+ */
+- (BOOL)isEqualToAttribution:(PMRAttribution *)attribution;
 
 @end
 
