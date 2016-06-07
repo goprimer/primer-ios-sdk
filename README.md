@@ -1,6 +1,6 @@
 # Primer iOS SDK
 
-[![CocoaPods Compatible](https://img.shields.io/badge/CocoaPods-3.0.0-5BA7E9.svg?style=flat)](https://cocoapods.org)
+[![CocoaPods Compatible](https://img.shields.io/badge/CocoaPods-3.0.1-5BA7E9.svg?style=flat)](https://cocoapods.org)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-Compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/badge/Platform-iOS-lightgrey.svg?style=flat)]()
 
@@ -10,11 +10,11 @@ The Primer iOS SDK requires a free account to be created at https://goprimer.com
 
 ## Get Started
 
-* We have a [Quick Start Guide](http://docs.goprimer.com/v3.0.0/docs/quick-start-guide) to help you get Primer up and running in your iOS app in less than 10 minutes.
+* We have a [Quick Start Guide](http://docs.goprimer.com/v3.0.1/docs/quick-start-guide) to help you get Primer up and running in your iOS app in less than 10 minutes.
 
-* If your app uses user account follow up with our [Quick Authentication Guide](http://docs.goprimer.com/v3.0.0/docs/quick-authentication-guide) to get account authentication with Primer tied into your app's user system.
+* If your app uses user account follow up with our [Quick Authentication Guide](http://docs.goprimer.com/v3.0.1/docs/quick-authentication-guide) to get account authentication with Primer tied into your app's user system.
 
-* Upgrading from v2? We have an [Upgrade Guide](http://docs.goprimer.com/v3.0.0/docs/upgrade-guide) to cover you.
+* Upgrading from v2? We have an [Upgrade Guide](http://docs.goprimer.com/v3.0.1/docs/upgrade-guide) to cover you.
 
 ## Installation
 
@@ -26,8 +26,6 @@ To integrate using CocoaPods, add the necessary sources and the Primer pod to yo
 pod 'Primer', '~> 3.0'
 ```
 
-*Note: since these are pre-releases you have to explicitly specify the version.*
-
 ##### Carthage
 
 To integrate using Carthage, add the following to your `Cartfile`:
@@ -36,15 +34,17 @@ To integrate using Carthage, add the following to your `Cartfile`:
 github "goprimer/primer-ios-sdk" "~> 3.0"
 ```
 
-And add the path to the framework under "Input Files" for the `copy-frameworks` script Build Phase:
+Don't forget to add the path to the framework under "Input Files" for the `copy-frameworks` script Build Phase:
 
 ```
 $(SRCROOT)/Carthage/Build/iOS/Primer.framework
 ```
 
+Then add the `AdSupport.framework` in the `Linked Frameworks and Libraries` section of the `General` tab of your app target's settings.
+
 ##### Manually
 
-To integrate manually just follow our [Manual Integration Guide](http://docs.goprimer.com/v3.0.0/docs/manual-integration-guide).
+To integrate manually just follow our [Manual Integration Guide](http://docs.goprimer.com/v3.0.1/docs/manual-integration-guide).
 
 ## Integration
 
