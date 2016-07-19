@@ -15,11 +15,8 @@ typedef NS_ENUM(NSInteger, PMRExperienceType)
     /// The automatically determined experience.
     PMRExperienceTypeAutomatic,
     
-    /// The install experience.
-    PMRExperienceTypeInstall,
-    
-    /// The logged out experience.
-    PMRExperienceTypeLoggedOut,
+    /// The new user experience.
+    PMRExperienceTypeNewUser,
     
     /// The login experience.
     PMRExperienceTypeLogin,
@@ -27,8 +24,14 @@ typedef NS_ENUM(NSInteger, PMRExperienceType)
     /// The recover password experience.
     PMRExperienceTypeRecoverPassword,
     
+    /// The install experience.
+    PMRExperienceTypeInstall DEPRECATED_MSG_ATTRIBUTE("use 'PMRExperienceTypeNewUser' instead.") = PMRExperienceTypeNewUser,
+    
+    /// The logged out experience.
+    PMRExperienceTypeLoggedOut DEPRECATED_MSG_ATTRIBUTE("use 'PMRExperienceTypeNewUser' instead.") = PMRExperienceTypeNewUser,
+    
     /// The signup experience.
-    PMRExperienceTypeSignup
+    PMRExperienceTypeSignup DEPRECATED_MSG_ATTRIBUTE("use 'PMRExperienceTypeNewUser' instead.") = PMRExperienceTypeNewUser
 };
 
 NS_ASSUME_NONNULL_BEGIN

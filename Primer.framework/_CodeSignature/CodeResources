@@ -10,19 +10,23 @@
 		</data>
 		<key>Headers/PMREvents.h</key>
 		<data>
-		iSjYvhS+Ie+eDWJpDq0EGN2cpeQ=
+		ypZBfQl5Q052eHYAsQX2TR7Bgjw=
 		</data>
 		<key>Headers/PMRExperienceDelegate.h</key>
 		<data>
-		yAmveUDKm0RPOk+2Bl/gT086D4M=
+		o4W67OnPegNpdpbyutJaPif7q1w=
 		</data>
 		<key>Headers/PMRExperienceSettings.h</key>
 		<data>
-		mx7JfdUMGqrm6zmiJdMYkF0bam4=
+		gmgyldtLZWieXtRF3BCTpLGYXBc=
 		</data>
 		<key>Headers/PMRLoggingLevel.h</key>
 		<data>
 		0qku4+ll9lxacncHbNxgRc+DzpA=
+		</data>
+		<key>Headers/PMRPurchaseDelegate.h</key>
+		<data>
+		f0N0wAyyXS+vAeAUiH+tKeNEz3Q=
 		</data>
 		<key>Headers/PMRUser.h</key>
 		<data>
@@ -38,15 +42,19 @@
 		</data>
 		<key>Headers/Primer.h</key>
 		<data>
-		0UsTlIFYxd15A8Eu2ZjOfetwDPs=
+		ui2KQbWiA09zvk83R+QaGl/SA/c=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		3fFpxcKzPnhl1VZFBf6supHIZV4=
+		DODW67AUGfOCGwtk4Uf2rMCCF24=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		QRVH8gdRLePx5hHECAOh/ZKT+Tg=
+		</data>
+		<key>integrate.sh</key>
+		<data>
+		8rH5FEltDC4qs0GU1CXDRY8YXPw=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -66,33 +74,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			iSjYvhS+Ie+eDWJpDq0EGN2cpeQ=
+			ypZBfQl5Q052eHYAsQX2TR7Bgjw=
 			</data>
 			<key>hash2</key>
 			<data>
-			aBBo0fOrOJusPt0gDAAICDOtv4iy4vG6dquiAAHExnc=
+			KAP8dALGB5cGYKXfK703rPvYXIa5+3tJsclNiAyNao8=
 			</data>
 		</dict>
 		<key>Headers/PMRExperienceDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yAmveUDKm0RPOk+2Bl/gT086D4M=
+			o4W67OnPegNpdpbyutJaPif7q1w=
 			</data>
 			<key>hash2</key>
 			<data>
-			A0WyKyGjkSBA8Row5HKAJAjJcOSqp3Kuy/sbh+InXQk=
+			QkMCwDo+hHyo0UMODlvhUkuo1yiiGfBZEjMZSNDQ1Rc=
 			</data>
 		</dict>
 		<key>Headers/PMRExperienceSettings.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mx7JfdUMGqrm6zmiJdMYkF0bam4=
+			gmgyldtLZWieXtRF3BCTpLGYXBc=
 			</data>
 			<key>hash2</key>
 			<data>
-			zRRS8WKGHnPGaT0yVIRpcfHiQLOyrWFoh3bcsU9oM8M=
+			kb/DYMcwbSO3iEfq937rFFsGrp/uLJCP/Vqaji/9HKY=
 			</data>
 		</dict>
 		<key>Headers/PMRLoggingLevel.h</key>
@@ -104,6 +112,17 @@
 			<key>hash2</key>
 			<data>
 			wcCmQvAxGvLDF1bIYryD++3cIkAlqWWqp9qqee9G6Ac=
+			</data>
+		</dict>
+		<key>Headers/PMRPurchaseDelegate.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			f0N0wAyyXS+vAeAUiH+tKeNEz3Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			FNz4ue7Bl6N3UXxCr6aJ+n3owNeqS0vmnpUxrksAoZM=
 			</data>
 		</dict>
 		<key>Headers/PMRUser.h</key>
@@ -143,11 +162,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0UsTlIFYxd15A8Eu2ZjOfetwDPs=
+			ui2KQbWiA09zvk83R+QaGl/SA/c=
 			</data>
 			<key>hash2</key>
 			<data>
-			elaNs+HW+F4hLV1INit6YZZ1ZNlI2sqPqVCNsfdno5g=
+			Bg6VBsxYsTyFMg6KRGf2uI/HTLlttsDK58O6QVrl8aw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -159,6 +178,17 @@
 			<key>hash2</key>
 			<data>
 			3po0P/36hXDB5yt5Y5HwpdUClkAE4g8wzWiRFFiUHXw=
+			</data>
+		</dict>
+		<key>integrate.sh</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			8rH5FEltDC4qs0GU1CXDRY8YXPw=
+			</data>
+			<key>hash2</key>
+			<data>
+			X9KoeIDjhG5rd7ny/eeWER7fSw+Szm4ZpDpavriNuo0=
 			</data>
 		</dict>
 	</dict>

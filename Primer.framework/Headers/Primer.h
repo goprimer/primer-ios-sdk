@@ -9,6 +9,7 @@
 #import "PMRExperienceDelegate.h"
 #import "PMRExperienceSettings.h"
 #import "PMRLoggingLevel.h"
+#import "PMRPurchaseDelegate.h"
 #import "PMRUser.h"
 #import "PMRUserABNTest.h"
 #import "PMRValidationResult.h"
@@ -131,6 +132,15 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - User Management
 
 /**
+ Sets the purchase delegate.
+ 
+ @note The SDK holds a weak reference to the delegate.
+ 
+ @param delegate The delegate for In-App Purchases.
+ */
++ (void)setPurchaseDelegate:(id <PMRPurchaseDelegate>)delegate;
+
+/**
  Sets whether the application requires login.
  
  @note Default value is `YES`.
@@ -190,6 +200,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)appendUserProperties:(NSDictionary<NSString *, id> *)userProperties;
 
+/**
+ Let's the SDK know that the types of local and remote notifications that can be used to get the user’s attention changed.
+ */
++ (void)applicationDidRegisterUserNotificationSettings;
+
 #pragma mark - Event Tracking
 
 /**
@@ -245,6 +260,17 @@ NS_ASSUME_NONNULL_BEGIN
  @param shouldUseIDFA The value to set.
  */
 + (void)setShouldUseIDFA:(BOOL)shouldUseIDFA;
+
+/**
+ Sets whether the SDK should use cookie attribution.
+ 
+ @note Default value is `NO`.
+ 
+ @warning Please link the SafariServices framework when enabling this feature.
+ 
+ @param cookieAttributionEnabled The value to set.
+ */
++ (void)setCookieAttributionEnabled:(BOOL)cookieAttributionEnabled;
 
 #pragma mark - Logging
 

@@ -43,3 +43,30 @@ extern NSString * const PMRScreenDisplayedEvent;
 
 /// Fired when an action is tapped on a Primer Flow's screen.
 extern NSString * const PMRActionTappedEvent;
+
+/// Fired when a permission is requested.
+extern NSString * const PMRPermissionRequestedEvent;
+
+/// Fired when a permission gets granted.
+extern NSString * const PMRPermissionGrantedEvent;
+
+/// Fired when a permission gets denied.
+extern NSString * const PMRPermissionDeniedEvent;
+
+/// Fired when a restriction blocks a permission request.
+extern NSString * const PMRPermissionRestrictedEvent;
+
+/// Fired when an In-App Purchase product is purchased.
+extern NSString * const PMRPurchasedEvent;
+
+/// Fired when an In-App Purchase subscription is purchased.
+extern NSString * const PMRSubscribedEvent;
+
+/// Fired when an In-App Purchase is cancelled.
+extern NSString * const PMRInAppPurchaseCancelledEvent;
+
+/// Fired when a restriction blocks an In-App Purchase.
+extern NSString * const PMRInAppPurchaseRestrictedEvent;
+
+/// Fired when an In-App Purchase fails.
+extern NSString * const PMRInAppPurchaseFailedEvent;
