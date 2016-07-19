@@ -1,5 +1,9 @@
 # Change Log
 
+## [3.1.0](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.0) (07/19/2016)
+
+This is our first big update to the third major version of our SDK, introducing support for built-in user permissions, automatic In-App Purchase handling, an improved flow structure, a custom suggestion toolbar, and cookie attribution, along with many other smaller changes and fixes. Please take a look at our [Upgrade Guide](http://docs.goprimer.com/v3.1.0/docs/upgrade-guide) for more information on what changed and how to update your integration.
+
 ## [3.0.1](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.0.1) (06/07/2016)
 
 ##### Enhancements
