@@ -1,5 +1,20 @@
 # Change Log
 
+## [3.1.2](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.2) (08/09/2016)
+
+##### Enhancements
+
+* Improved SDK initialization logic.
+* Improved layout handling.
+* Improved suggestions toolbar behaviour.
+* Improved revenue tracking.
+* Improved internal events.
+* Improved input placeholder handling.
+
+##### Bug Fixes
+
+* Fixed a minor and rare event tracking issue.
+
 ## [3.1.1](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.1) (07/27/2016)
 
 ##### Enhancements
