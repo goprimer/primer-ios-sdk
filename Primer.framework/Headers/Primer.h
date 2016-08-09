@@ -48,6 +48,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)startWithToken:(NSString *)token;
 
+/**
+ Whether the SDK is initialized.
+ 
+ @return `YES` if the SDK was properly started, and `NO` otherwise.
+ */
++ (BOOL)isInitialized;
+
 #pragma mark - Onboarding
 
 /**
