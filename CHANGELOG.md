@@ -1,5 +1,20 @@
 # Change Log
 
+## [3.1.3](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.3) (08/25/2016)
+
+##### Enhancements
+
+* Support pulling Facebook App ID from FBSDKSettings.
+* Improved tracking with new Facebook Login event.
+* Improved button text alignment by adding more customization.
+* Improved tracking by adding more flow and screen metadata.
+* Improved tracking by collecting more device model details.
+* Improved handling of screens with incorrect In-App Purchase Product Identifiers.
+
+##### Bug Fixes
+
+* Fixed formatting of local event forwarding user info.
+
 ## [3.1.2](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.2) (08/09/2016)
 
 ##### Enhancements
