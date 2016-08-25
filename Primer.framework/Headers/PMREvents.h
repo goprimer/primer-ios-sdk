@@ -29,6 +29,9 @@ extern NSString * const PMRSignupEvent;
 /// Fired when a user gets logged in.
 extern NSString * const PMRLoginEvent;
 
+/// Fired when a Facebook user gets logged in.
+extern NSString * const PMRFacebookLoginEvent;
+
 /// Fired when a user gets logged out.
 extern NSString * const PMRLogoutEvent;
 
