@@ -1,5 +1,14 @@
 # Change Log
 
+## [3.1.4](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.4) (09/15/2016)
+
+##### Enhancements
+
+* Added support for iOS 10.
+* Added support for platform-specific features.
+* Improved permission tracking.
+* Improved handling of the return key on inputs.
+
 ## [3.1.3](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.3) (08/25/2016)
 
 ##### Enhancements
