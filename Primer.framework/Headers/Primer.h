@@ -208,7 +208,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)appendUserProperties:(NSDictionary<NSString *, id> *)userProperties;
 
 /**
- Let's the SDK know that the types of local and remote notifications that can be used to get the user’s attention changed.
+ Lets the SDK know that the types of local and remote notifications that can be used to get the user’s attention changed.
  */
 + (void)applicationDidRegisterUserNotificationSettings;
 
