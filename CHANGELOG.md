@@ -1,5 +1,11 @@
 # Change Log
 
+## [3.1.5](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.5) (09/16/2016)
+
+##### Enhancements
+
+* Added integration option without permissions support.
+
 ## [3.1.4](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.4) (09/15/2016)
 
 ##### Enhancements
