@@ -1,5 +1,12 @@
 # Change Log
 
+## [3.1.6](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.6) (10/11/2016)
+
+##### Enhancements
+
+* Added support for secure input keys.
+* Improved attribution parameter parsing.
+
 ## [3.1.5](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.5) (09/16/2016)
 
 ##### Enhancements
