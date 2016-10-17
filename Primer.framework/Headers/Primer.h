@@ -19,6 +19,9 @@ FOUNDATION_EXPORT const unsigned char PrimerVersionString[];
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// The key of the deferred App Link URL launch option.
+extern NSString * const PMRLaunchOptionsDeferredAppLinkURLKey;
+
 /**
  `Primer` is the primary interface of the SDK, providing access to all major features, and importing all public headers.
  */
@@ -54,6 +57,30 @@ NS_ASSUME_NONNULL_BEGIN
  @return `YES` if the SDK was properly started, and `NO` otherwise.
  */
 + (BOOL)isInitialized;
+
+/**
+ Sets whether the SDK launch is delayed.
+ 
+ @note Default value is `NO`. If you set this to `YES`, make sure to call +launchDelayedWithOptions: in a timely manner after application launch.
+ 
+ @see +launchDelayedWithOptions:
+ 
+ @warning Make sure to call this method before starting the SDK.
+ 
+ @param enabled The value to be set.
+ */
++ (void)setDelayedLaunchEnabled:(BOOL)enabled;
+
+/**
+ Launches the SDK delayed, with the given options, if any.
+ 
+ @note Delayed launch has to be enabled for this to function.
+ 
+ @see +setDelayedLaunchEnabled:
+ 
+ @param options The dictionary of launch options.
+ */
++ (void)delayedLaunchWithOptions:(nullable NSDictionary *)options;
 
 #pragma mark - Onboarding
 
