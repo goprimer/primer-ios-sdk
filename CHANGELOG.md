@@ -1,5 +1,16 @@
 # Change Log
 
+## [3.1.7](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.7) (10/17/2016)
+
+##### New Features
+
+* Added support for a delayed SDK launch.
+* Added a way to provide existing attribution data on launch.
+
+##### Bug Fixes
+
+* Fixed a rare issue with flow related memory management.
+
 ## [3.1.6](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.6) (10/11/2016)
 
 ##### Enhancements
