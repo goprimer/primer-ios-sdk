@@ -1,5 +1,17 @@
 # Change Log
 
+## [3.2.0](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.2.0) (10/27/2016)
+
+##### New Features
+
+* Pausing and resuming experiences is now possible.
+* New field submission option for the experience delegate.
+* Added support for specific screen presentation via screen name.
+
+##### Bug Fixes
+
+* Fixed an issue with Facebook login related loading overlays.
+
 ## [3.1.7](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.1.7) (10/17/2016)
 
 ##### New Features
