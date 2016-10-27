@@ -53,6 +53,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// The view controller that should be presenting the experience.
 @property (nonatomic, strong, nullable) UIViewController *presentingViewController;
 
+/// The name of the specific screen that should be presented.
+@property (nonatomic, strong, nullable) NSString *screenName;
+
 #pragma mark - Creation
 
 /**

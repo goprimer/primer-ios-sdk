@@ -163,6 +163,34 @@ extern NSString * const PMRLaunchOptionsDeferredAppLinkURLKey;
  */
 + (void)goToNextExperienceScreen;
 
+/**
+ Hides the currently presented experience if there's one.
+ 
+ @note This does not substitute dismissal, so eventually resuming or dismissing is required.
+ */
++ (void)pauseExperience;
+
+/**
+ Hides the currently presented experience if there's one.
+ 
+ @note This does not substitute dismissal, so eventually resuming or dismissing is required.
+ 
+ @param completion The callback that gets called when the dismissal is done.
+ */
++ (void)pauseExperienceWithCompletion:(void (^)(BOOL success))completion;
+
+/**
+ Presents the currently paused experience if there's one.
+ */
++ (void)resumeExperience;
+
+/**
+ Presents the currently paused experience if there's one.
+ 
+ @param completion The callback that gets called when the presentation is done.
+ */
++ (void)resumeExperienceWithCompletion:(void (^)(BOOL success))completion;
+
 #pragma mark - User Management
 
 /**

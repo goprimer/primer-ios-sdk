@@ -29,6 +29,15 @@ typedef void(^PMRUserValidationBlock)(PMRValidationResult * _Nullable result, NS
 typedef void(^PMRValidationBlock)(PMRValidationResult * _Nullable result);
 
 /**
+ @typedef PMRSuccessBlock
+ 
+ The block that should be called when success is determined.
+ 
+ @param success Whether the action was successful.
+ */
+typedef void(^PMRSuccessBlock)(BOOL success);
+
+/**
  The delegate conforming to the `PMRExperienceDelegate` protocol is responsible for handling messages from the currently presented experience.
  
  It will be notified about the progress of your users, and receive the information they provide as an input.
@@ -36,6 +45,21 @@ typedef void(^PMRValidationBlock)(PMRValidationResult * _Nullable result);
 @protocol PMRExperienceDelegate <NSObject>
 
 @optional
+
+/**
+ Called after fields are submitted.
+ 
+ You should handle the fields and call the completion block as soon as possible.
+ 
+ @attention Always call the `completion` block, even if in an asynchronous manner. Until you do so, the SDK might display a loading overlay to the user.
+ 
+ @note The completion block's parameter determines whether the success action will be executed, if any.
+ 
+ @param fields The `key : value` pair of the submitted fields.
+ 
+ @param completion The block to call when handling is finished.
+ */
+- (void)handleFields:(NSDictionary<NSString *, id> *)fields completion:(PMRSuccessBlock)completion;
 
 /**
  Called after a screen is submitted with any fields on it.
