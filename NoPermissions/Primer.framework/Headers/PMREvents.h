@@ -41,6 +41,9 @@ extern NSString * const PMRFlowStartedEvent;
 /// Fired when a Primer Flow has completed.
 extern NSString * const PMRFlowCompletedEvent;
 
+/// Fired when a Primer Flow is skipped.
+extern NSString * const PMRFlowSkippedEvent;
+
 /// Fired when a Primer Flow's screen gets displayed.
 extern NSString * const PMRScreenDisplayedEvent;
 
