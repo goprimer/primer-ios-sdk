@@ -1,5 +1,20 @@
 # Change Log
 
+## [3.2.1](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.2.1) (11/22/2016)
+
+##### New Features
+
+* Input value syncing based on user property name.
+
+##### Enhancements
+
+* Improved flow related event tracking.
+* Improved value validation system.
+
+##### Bug Fixes
+
+* Fixed inline validation behaviour on Submit Fields screens.
+
 ## [3.2.0](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.2.0) (10/27/2016)
 
 ##### New Features
