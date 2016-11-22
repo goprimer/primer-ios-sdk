@@ -1,6 +1,6 @@
 # Primer iOS SDK
 
-[![CocoaPods Compatible](https://img.shields.io/badge/CocoaPods-3.2.0-5BA7E9.svg?style=flat)](https://cocoapods.org)
+[![CocoaPods Compatible](https://img.shields.io/badge/CocoaPods-3.2.1-5BA7E9.svg?style=flat)](https://cocoapods.org)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-Compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/badge/Platform-iOS-lightgrey.svg?style=flat)]()
 
