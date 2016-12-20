@@ -1,5 +1,20 @@
 # Change Log
 
+## [3.2.2](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.2.2) (12/20/2016)
+
+##### Enhancements
+
+* Improved error message displaying.
+* Overhauled image preloading system.
+* Improved dynamic variable handling.
+* Updated picker placeholder support.
+* Tweaked events related error handling.
+* Improved flow pause logic.
+
+##### Bug Fixes
+
+* Fixed input position getting reset.
+
 ## [3.2.1](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.2.1) (11/22/2016)
 
 ##### New Features
