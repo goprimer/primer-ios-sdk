@@ -1,5 +1,23 @@
 # Change Log
 
+## [3.2.3](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.2.3) (01/31/2017)
+
+##### New Features
+
+* Added support for field value inheritance.
+
+##### Enhancements
+
+* Improved tracking of Facebook signups.
+* Tweaked Facebook login action handling.
+* Improved Facebook value handling.
+* Updated launch time tracking.
+
+##### Bug Fixes
+
+* Fixed an issue with button icons being repeated.
+* Fixed a rare issue with validation item type checking.
+
 ## [3.2.2](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.2.2) (12/20/2016)
 
 ##### Enhancements
