@@ -1,5 +1,16 @@
 # Change Log
 
+## [3.2.4](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.2.4) (03/09/2017)
+
+##### New Features
+
+* Added support for line height multiplier.
+
+##### Enhancements
+
+* Improved image downloading and preloading logic.
+* Tweaked event request data handling.
+
 ## [3.2.3](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.2.3) (01/31/2017)
 
 ##### New Features
