@@ -1,5 +1,5 @@
 //
-//  Primer.h - Copyright © 2016 Primer. All rights reserved.
+//  Primer.h - Copyright © 2017 Primer. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

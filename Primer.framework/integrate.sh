@@ -1,5 +1,5 @@
 #
-#  integrate.sh - Copyright © 2016 Primer. All rights reserved.
+#  integrate.sh - Copyright © 2017 Primer. All rights reserved.
 #
 #  This script strips the simulator chunks from the Primer
 #  framework file whenever you do a release build.
