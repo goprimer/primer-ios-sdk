@@ -1,5 +1,23 @@
 # Change Log
 
+## [3.3.0](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.3.0) (05/08/2017)
+
+##### New Features
+
+* Added support for field value inheritance.
+* Added optional HTTPS support.
+* Added support for auto focus on text inputs.
+* Added font size adjusting support to labels.
+
+##### Enhancements
+
+* Improved returning user tracking.
+* Deprecated cookie attribution.
+
+##### Bug Fixes
+
+* Suggestion toolbar suffixing behavior.
+
 ## [3.2.4](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.2.4) (03/09/2017)
 
 ##### New Features
