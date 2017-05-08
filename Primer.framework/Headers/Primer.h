@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// The key of the deferred App Link URL launch option.
 extern NSString * const PMRLaunchOptionsDeferredAppLinkURLKey;
 
+/// The key of the is first run launch option.
+extern NSString * const PMRLaunchOptionsIsFirstRunKey;
+
 /**
  `Primer` is the primary interface of the SDK, providing access to all major features, and importing all public headers.
  */
@@ -32,24 +35,48 @@ extern NSString * const PMRLaunchOptionsDeferredAppLinkURLKey;
 /**
  Initializes the SDK.
  
- You need to set the SDK Token in your `Info.plist` under the `PrimerToken` key.
+ You need to set the SDK token in your `Info.plist` under the `PrimerToken` key.
  
- @note You can optionally provide the SDK Token as a parameter.
+ @note You can optionally provide the SDK token as a parameter.
  
  @see +startWithToken:
  */
 + (void)start;
 
 /**
- Initializes the SDK with the given Token.
+ Initializes the SDK with the given token.
  
- @note You can optionally provide the Token in your `Info.plist`.
+ @note You can optionally provide the token in your `Info.plist`.
  
  @see +start
  
- @param token The SDK Token to use for the initialization.
+ @param token The SDK token to use for the initialization.
  */
 + (void)startWithToken:(NSString *)token;
+
+/**
+ Initializes the SDK with the given launch options.
+ 
+ @note You can optionally provide the SDK token as a parameter.
+ 
+ @see +startWithToken:options
+ 
+ @param options The dictionary of launch options.
+ */
++ (void)startWithOptions:(NSDictionary *)options;
+
+/**
+ Initializes the SDK with the given token and launch options.
+ 
+ @note You can optionally provide the token in your `Info.plist`.
+ 
+ @see +startWithOptions:
+ 
+ @param token The SDK token to use for the initialization.
+ 
+ @param options The dictionary of launch options.
+ */
++ (void)startWithToken:(NSString *)token options:(NSDictionary *)options;
 
 /**
  Whether the SDK is initialized.
@@ -81,6 +108,15 @@ extern NSString * const PMRLaunchOptionsDeferredAppLinkURLKey;
  @param options The dictionary of launch options.
  */
 + (void)delayedLaunchWithOptions:(nullable NSDictionary *)options;
+
+/**
+ Sets whether the SDK should use Primer's optimized HTTP-based secure connection.
+ 
+ @note Default value is `YES`. If you set this to `NO`, you can safely remove the domain whitelisting from your `Info.plist`.
+ 
+ @param useOptimizedConnection The value to be set.
+ */
++ (void)setShouldUseOptimizedConnection:(BOOL)useOptimizedConnection;
 
 #pragma mark - Onboarding
 
@@ -332,7 +368,7 @@ extern NSString * const PMRLaunchOptionsDeferredAppLinkURLKey;
  
  @param cookieAttributionEnabled The value to set.
  */
-+ (void)setCookieAttributionEnabled:(BOOL)cookieAttributionEnabled;
++ (void)setCookieAttributionEnabled:(BOOL)cookieAttributionEnabled DEPRECATED_MSG_ATTRIBUTE("this SDK feature is not available anymore.");
 
 #pragma mark - Logging
 
