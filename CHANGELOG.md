@@ -1,5 +1,11 @@
 # Change Log
 
+## [3.3.1](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.3.1) (05/18/2017)
+
+##### Bug Fixes
+
+* Fixed toggle button validation behavior.
+
 ## [3.3.0](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.3.0) (05/08/2017)
 
 ##### New Features
