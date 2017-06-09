@@ -227,6 +227,15 @@ extern NSString * const PMRLaunchOptionsIsFirstRunKey;
  */
 + (void)resumeExperienceWithCompletion:(void (^)(BOOL success))completion;
 
+/**
+ Fires a trigger to execute an action.
+ 
+ @param trigger The name of the trigger to be fired.
+ 
+ @return `YES` if the trigger existed, and `NO` otherwise.
+ */
++ (BOOL)fireTrigger:(NSString *)trigger;
+
 #pragma mark - User Management
 
 /**

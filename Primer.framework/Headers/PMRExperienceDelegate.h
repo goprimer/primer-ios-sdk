@@ -146,6 +146,15 @@ typedef void(^PMRSuccessBlock)(BOOL success);
  */
 - (void)willCloseWithFields:(NSDictionary<NSString *, id> *)fields;
 
+/**
+ Called after a screen appeared.
+ 
+ @param name The name of the screen.
+ 
+ @param triggers The array of triggers that are available on the screen.
+ */
+- (void)screenDidAppearWithName:(NSString *)name triggers:(NSArray<NSString *> *)triggers;
+
 #pragma mark - Deprecated
 
 /**
