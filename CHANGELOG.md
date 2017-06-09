@@ -1,5 +1,17 @@
 # Change Log
 
+## [3.4.0](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.4.0) (06/09/2017)
+
+##### New Features
+
+* Added support for required screens.
+* Added support for triggers.
+* Added support for three new actions.
+
+##### Enhancements
+
+* Improved data encryption logic.
+
 ## [3.3.1](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.3.1) (05/18/2017)
 
 ##### Bug Fixes
