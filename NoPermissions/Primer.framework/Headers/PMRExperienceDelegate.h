@@ -155,6 +155,21 @@ typedef void(^PMRSuccessBlock)(BOOL success);
  */
 - (void)screenDidAppearWithName:(NSString *)name triggers:(NSArray<NSString *> *)triggers;
 
+/**
+ Called after a trigger is submitted.
+ 
+ You should handle the trigger and call the completion block as soon as possible.
+ 
+ @attention Always call the `completion` block, even if in an asynchronous manner. Until you do so, the SDK might display a loading overlay to the user.
+ 
+ @note The completion block's parameter determines whether the success or the failure action will be executed, if any.
+ 
+ @param trigger The trigger that was submitted.
+ 
+ @param completion The block to call when handling is finished.
+ */
+- (void)handleTrigger:(NSString *)trigger completion:(PMRSuccessBlock)completion;
+
 #pragma mark - Deprecated
 
 /**
