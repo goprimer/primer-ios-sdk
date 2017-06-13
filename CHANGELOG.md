@@ -1,5 +1,11 @@
 # Change Log
 
+## [3.4.1](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.4.1) (06/13/2017)
+
+##### Enhancements
+
+* Improved trigger handling.
+
 ## [3.4.0](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.4.0) (06/09/2017)
 
 ##### New Features
