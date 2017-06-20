@@ -1,5 +1,11 @@
 # Change Log
 
+## [3.4.3](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.4.3) (06/20/2017)
+
+##### Bug Fixes
+
+* Fixed encryption compatibility issue.
+
 ## [3.4.2](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.4.2) (06/19/2017)
 
 ##### Enhancements
