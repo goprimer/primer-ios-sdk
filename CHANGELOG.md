@@ -1,5 +1,11 @@
 # Change Log
 
+## [3.4.2](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.4.2) (06/19/2017)
+
+##### Enhancements
+
+* Improved trigger firing thread safety.
+
 ## [3.4.1](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.4.1) (06/13/2017)
 
 ##### Enhancements
