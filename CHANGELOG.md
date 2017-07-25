@@ -1,5 +1,15 @@
 # Change Log
 
+## [3.4.4](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.4.4) (07/25/2017)
+
+##### Enhancements
+
+* Improved dynamic variable system.
+
+##### Bug Fixes
+
+* Fixed server request creation issue.
+
 ## [3.4.3](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.4.3) (06/20/2017)
 
 ##### Bug Fixes
