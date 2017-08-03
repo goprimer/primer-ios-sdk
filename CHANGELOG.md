@@ -1,5 +1,17 @@
 # Change Log
 
+## [3.5.0](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.5.0) (08/03/2017)
+
+##### New Features
+
+* Added support for User Notifications framework.
+* Deep Link Flows.
+
+##### Enhancements
+
+* Improved flow event tracking.
+* Tweaked launch call.
+
 ## [3.4.4](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.4.4) (07/25/2017)
 
 ##### Enhancements
