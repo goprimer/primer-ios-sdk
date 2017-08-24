@@ -1,5 +1,11 @@
 # Change Log
 
+## [3.5.1](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.5.1) (08/23/2017)
+
+##### Bug Fixes
+
+* Ensured UI thread safety in a previously uncovered scenario.
+
 ## [3.5.0](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.5.0) (08/03/2017)
 
 ##### New Features
