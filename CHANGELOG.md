@@ -1,5 +1,11 @@
 # Change Log
 
+## [3.5.2](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.5.2) (10/30/2017)
+
+##### Enhancements
+
+* Added safe area insets for iPhone X support.
+
 ## [3.5.1](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.5.1) (08/23/2017)
 
 ##### Bug Fixes
