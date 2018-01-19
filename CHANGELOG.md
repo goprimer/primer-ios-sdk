@@ -1,5 +1,12 @@
 # Change Log
 
+## [3.5.3](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.5.3) (01/19/2018)
+
+##### Enhancements
+
+* Added support for event and API call parameter sanitization.
+* Deprecated tracking link retrieval.
+
 ## [3.5.2](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.5.2) (10/30/2017)
 
 ##### Enhancements
