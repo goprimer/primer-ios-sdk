@@ -1,5 +1,5 @@
 //
-//  PMRExperienceSettings.h - Copyright © 2017 Primer. All rights reserved.
+//  PMRExperienceSettings.h - Copyright © 2018 Primer. All rights reserved.
 //
 
 #import <UIKit/UIkit.h>

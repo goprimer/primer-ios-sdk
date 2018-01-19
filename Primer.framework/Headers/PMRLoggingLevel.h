@@ -1,5 +1,5 @@
 //
-//  PMRLoggingLevel.h - Copyright © 2017 Primer. All rights reserved.
+//  PMRLoggingLevel.h - Copyright © 2018 Primer. All rights reserved.
 //
 
 /**

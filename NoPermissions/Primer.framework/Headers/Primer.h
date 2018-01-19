@@ -1,5 +1,5 @@
 //
-//  Primer.h - Copyright © 2017 Primer. All rights reserved.
+//  Primer.h - Copyright © 2018 Primer. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -343,7 +343,7 @@ extern NSString * const PMRLaunchOptionsIsFirstRunKey;
  
  @param completion The block that gets called with the link, or with `nil` if one cannot be retrieved.
  */
-+ (void)getLinkForTargeting:(NSString *)targeting withParameters:(nullable NSDictionary<NSString *, id> *)parameters completion:(void(^)(NSString * _Nullable link))completion;
++ (void)getLinkForTargeting:(NSString *)targeting withParameters:(nullable NSDictionary<NSString *, id> *)parameters completion:(void(^)(NSString * _Nullable link))completion DEPRECATED_MSG_ATTRIBUTE("this SDK feature is not available anymore.");
 
 /**
  Returns the install attribution information as soon as it's available.
@@ -364,9 +364,18 @@ extern NSString * const PMRLaunchOptionsIsFirstRunKey;
  
  @note Default value is `YES`.
  
- @param shouldUseIDFA The value to set.
+ @param shouldUseIDFA The value to be set.
  */
 + (void)setShouldUseIDFA:(BOOL)shouldUseIDFA;
+
+/**
+ Sets whether the SDK should sanitize event and API call parameters by removing PII information.
+ 
+ @note Default value is `NO`.
+ 
+ @param enabled The value to be set.
+ */
++ (void)setSanitizeEnabled:(BOOL)enabled;
 
 /**
  Sets whether the SDK should use cookie attribution.
@@ -375,7 +384,7 @@ extern NSString * const PMRLaunchOptionsIsFirstRunKey;
  
  @warning Please link the SafariServices framework when enabling this feature.
  
- @param cookieAttributionEnabled The value to set.
+ @param cookieAttributionEnabled The value to be set.
  */
 + (void)setCookieAttributionEnabled:(BOOL)cookieAttributionEnabled DEPRECATED_MSG_ATTRIBUTE("this SDK feature is not available anymore.");
 
