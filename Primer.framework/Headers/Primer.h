@@ -165,6 +165,11 @@ extern NSString * const PMRLaunchOptionsIsFirstRunKey;
 + (BOOL)isPresentingExperience;
 
 /**
+ Returns the currently presented view controller, if any.
+ */
++ (nullable UIViewController *)currentExperience;
+
+/**
  Dismisses the currently presented experience if there's one.
  */
 + (void)dismissExperience;

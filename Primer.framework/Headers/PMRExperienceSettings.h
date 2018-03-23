@@ -44,6 +44,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// The type of the experience. See `PMRExperienceType` for possible values.
 @property (nonatomic, assign) PMRExperienceType experienceType;
 
+/// Whether the presentation should use a wrapper window.
+@property (nonatomic, assign) BOOL shouldUseWindowBasedPresentation;
+
 /// Whether the presentation of the experience should be animated.
 @property (nonatomic, assign) BOOL shouldPresentAnimated;
 
