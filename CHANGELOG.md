@@ -1,5 +1,16 @@
 # Change Log
 
+## [3.6.0](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.6.0) (03/23/2018)
+
+##### New Features
+
+* Added opt-in support for window-based presentation.
+* Added support for in-app URL opening.
+
+##### Enhancements
+
+* Made the currently presented view controller available.
+
 ## [3.5.3](https://github.com/goprimer/primer-ios-sdk/releases/tag/3.5.3) (01/19/2018)
 
 ##### Enhancements
